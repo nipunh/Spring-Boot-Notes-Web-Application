@@ -17,6 +17,10 @@
       text-align: center;
     }
 
+    .p{
+        color : red;
+    }
+
     h2 {
       margin-top: 0;
     }
@@ -49,11 +53,12 @@
 <body>
   <div class="container">
     <h2>Login ${name}</h2>
-    <form action="your-login-endpoint" method="POST">
+    <form method="POST">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
     </form>
+    <p>${errorMessage}</p>
   </div>
 </body>
 </html>
