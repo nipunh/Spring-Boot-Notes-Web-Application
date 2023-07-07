@@ -14,8 +14,6 @@ public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-
-
     private AuthenticationService authenticationService;
     public LoginController(AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
@@ -36,7 +34,5 @@ public class LoginController {
         model.put("errorMessage", "Invalid Credentials! Please try again.");
 
         return "login";
-
-
     }
 }
