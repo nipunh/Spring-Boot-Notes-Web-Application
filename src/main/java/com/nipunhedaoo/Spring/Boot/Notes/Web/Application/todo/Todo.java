@@ -12,7 +12,7 @@ public class Todo {
     @Size(min = 10, message = "Enter at least 10 characters")
     private String description;
 
-    @Past(message = "Finish date cannot be in past")
+//    @Past(message = "Finish date cannot be in past")
     private LocalDate targetDate;
 
     private  boolean done;

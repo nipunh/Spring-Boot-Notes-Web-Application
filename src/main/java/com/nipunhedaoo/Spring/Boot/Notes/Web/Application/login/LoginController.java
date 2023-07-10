@@ -28,6 +28,7 @@ public class LoginController {
         model.put("username", username);
         model.put("password", password);
         if(authenticationService.authenticate(username, password)){
+            model.put("userName", username);
             return "welcome";
         }
 

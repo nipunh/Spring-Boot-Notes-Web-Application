@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Controller
 public class TodoController {
@@ -22,9 +23,6 @@ public class TodoController {
 
     private TodoService todoService;
 
-
-
-//    list-todos
     @RequestMapping("list-todos")
     public String listAllTodos(ModelMap model){
         List<Todo> todos = todoService.findbyUserName("nipunhedaoo");
@@ -50,11 +48,27 @@ public class TodoController {
         return "redirect:list-todos";
     }
 
-    @RequestMapping(value = "delete-todo", method = RequestMethod.DELETE)
-    public String showDeketeTodoPage(ModelMap model){
-        Todo todo = new Todo(0, (String)model.get("userName"), "", LocalDate.now(), false);
+    @RequestMapping(value = "delete-todo")
+    public String showDeleteTodoPage(@RequestParam int id){
+        todoService.deleteTodo(id);
+        return "redirect:list-todos";
+    }
+
+    @RequestMapping(value = "update-todo", method = RequestMethod.GET)
+    public String showUpdateTodoPage(@RequestParam int id, ModelMap model){
+        Todo todo = todoService.findById(id);
         model.put("todo", todo);
         return "todo";
+    }
+
+    @RequestMapping(value = "update-todo", method = RequestMethod.POST)
+    public String updateTodo(ModelMap model, @Valid Todo todo, BindingResult result){
+
+        if(result.hasErrors()){
+            return "todo";
+        }
+        todoService.updateTodo(todo);
+        return "redirect:list-todos";
     }
 
 

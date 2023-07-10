@@ -46,7 +46,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Add Todo</h1>
+        <h1>Enter Todo Details</h1>
         <form:form id="addTodoForm" method="post" modelAttribute="todo">
             <div class="form-group">
                 <label for="description">Todo Description:</label>
@@ -63,7 +63,7 @@
                 <form:input type="hidden" id="id" path="id" name="id" />
 
             <div class="form-group">
-                <button type="submit">Add Todo</button>
+                <button type="submit">Save Todo</button>
             </div>
         </form:form>
     </div>
