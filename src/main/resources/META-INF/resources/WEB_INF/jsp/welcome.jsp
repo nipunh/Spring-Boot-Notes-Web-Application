@@ -2,48 +2,53 @@
 <head>
   <title>Welcome Page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
-
-    .container {
-      width: 400px;
-      margin: 0 auto;
+    .navbar {
+      background-color: #f8f9fa;
       padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    h2 {
-      margin-top: 0;
-    }
-
-    p {
-      margin-bottom: 20px;
-    }
-
-    .logout-button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
+    .navbar-brand {
+      margin: 5px;
       text-decoration: none;
+      font-weight: bold;
+      color: #333;
     }
 
-    .logout-button:hover {
-      background-color: #45a049;
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
     }
   </style>
+
 </head>
 <body>
-  <div class="container">
-    <h2>Welcome</h2>
-    <p>Login Successful! Welcome to our website ${username} ! </p>
-    <a href="logout.html" class="logout-button">Logout</a>
-  </div>
+  <nav class="navbar">
+    <div>
+
+      <ul class="navbar-nav">
+        <li><a class="navbar-brand" href="https://nipunh.github.io">Nipun Hedaoo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/list-todos">Todos</a></li>
+      </ul>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
